@@ -3,7 +3,6 @@ package najah.edu.cap.assignment1;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.Scanner;
-
 public class Demo {
     public static void main(String[] args) {
 
@@ -19,13 +18,16 @@ public class Demo {
         Student st = new Student(19 , "Nama'",dob);
 
         University najah = new University();
-        najah.add(st);
+        //najah.add(st);
         //Student s =najah.retreive(110);
         //s.printInfo();
 
 
         //najah.remove(19);
         //najah.retreive(19);
+
+        //Student Masetr = new MasterStudent(10, "Nama'" , dob ,3 ,"Amjad");
+        //najah.add((MasterStudent) Masetr);
 
         System.out.print("Enter your choice : ");
         int choice = scanner.nextInt();
@@ -35,26 +37,24 @@ public class Demo {
             switch(choice){
                 case 1://add students
                 {
-
+                    najah.add();
+                    break;
                 }
                 case 2://delete student
                 {
                     System.out.print("Enter id for the student to delete him/her : ");
                     id = scanner.nextInt();
                     najah.remove(id);
-                    /**stu = new Student();
-                    for (int i = 0; i < najah.listOfStudents.size(); i++) {
-                        stu = (Student) najah.listOfStudents.get(i);
-                        if (id == stu.getId()) {
-                            najah.remove(id);
-                        }
-                        }**/
-                        break;
+                    break;
                 }
                 case 3:{//retrieve student
                     System.out.print("Enter id for the student to delete him/her : ");
                     id = scanner.nextInt();
                     najah.retreive(id);
+                    break;
+                }
+                case 4:{
+                    System.out.print("The number of add, remove, retrieve operations = " + najah.count);
                     break;
                 }
                 case 5 :// print age
@@ -92,10 +92,18 @@ public class Demo {
                 }
                 case 8:
                 {
+                    System.out.print("Enter id for the student to compare two students: ");
+                    id = scanner.nextInt();
+                    if (najah.checkStudent(id)) {
 
+                    }else
+                        System.out.println("There is no student with this id .");
+                    break;
                 }
+                case 14 :
+                    return;
                 default:
-                    System.out.println("Exit");
+                    break;
                 }
         //    }
         //najah.createList();
