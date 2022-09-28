@@ -4,11 +4,19 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Student {
-    public int id;
-    public String name;
-    public LocalDate DateOfBirth;
+    public int getId() {
+        return id;
+    }
 
+    public int id ;
+    public String name ;
+    public LocalDate DateOfBirth ;
 
+    public Student(){
+        id =0 ;
+        name = " ";
+        DateOfBirth = LocalDate.now();
+    }
     public Student(int id, String name, LocalDate DateOfBirth){
         this.id = id;
         this.name=name;
@@ -30,18 +38,18 @@ public class Student {
         //casting
         Student st = (Student) obj;
         if(!(st.id == this.id)){
-            System.out.println("The two students don't have same values. ");
+            //System.out.println("The two students don't have same values. ");
             return false;
         }
         if(!(st.name == this.name)){
-            System.out.println("The two students don't have same values. ");
+            //System.out.println("The two students don't have same values. ");
             return false;
         }
         if(!(st.DateOfBirth == this.DateOfBirth)){
-            System.out.println("The two students don't have same values. ");
+            //System.out.println("The two students don't have same values. ");
             return false;
         }
-            System.out.println("The two students have same values.  ");
+            //System.out.println("The two students have same values.  ");
         return true;
     }
 
