@@ -9,6 +9,11 @@ public class MedicalStudent extends Student{
     }
 
     public String Hospital;
+
+    public String getMresearch() {
+        return Mresearch;
+    }
+
     public String Mresearch;
 
     public MedicalStudent(int id, String name, LocalDate DateOfBirth, String hospital) {

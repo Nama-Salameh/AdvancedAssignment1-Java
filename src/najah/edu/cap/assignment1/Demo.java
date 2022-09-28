@@ -44,8 +44,7 @@ public class Demo {
                 case 3:{//retrieve student
                     System.out.print("Enter id for the student to delete him/her : ");
                     id = scanner.nextInt();
-                    Student stud  = najah.retreive(id);
-                    stud.printInfo();
+                    najah.retreive(id);
                     break;
                 }
                 case 4:{
@@ -79,8 +78,10 @@ public class Demo {
                     id = scanner.nextInt();
                     if (najah.checkStudent(id)) {
                         Student s = najah.retreive(id);
-                        if(s.equals(st))
+                        if(s.equals(st)) {
                             System.out.println("It's the same student .");
+                        }else
+                            System.out.println("There is no student with this id .");
                     } else
                         System.out.println("There is no student with this id .");
                     break;
@@ -93,34 +94,47 @@ public class Demo {
                 }
                 case 9: {
                     ((MasterStudent) Masetr).submitResearch();
+                    String Masresearch = (((MasterStudent) Masetr).getResearch());
+                    System.out.println("the research is " + Masresearch);
                     break;
                 }
                 case 10: {
-                    ((MasterStudent) Masetr).getSupervisor();
+                    //((MasterStudent) Masetr).getSupervisor();
+                    String supervisor = ((MasterStudent) Masetr).getSupervisor();
+                    System.out.println("the research is " + supervisor);
                     break;
                 }
+               /** case 11: {
+                    //((MasterStudent) Masetr).submitResearch();
+                    String Masresearch = ((MasterStudent) Masetr).getResearch();
+                    System.out.println("the research is " + Masresearch);
+                    break;
+                }**/
                 case 11: {
-                    ((MasterStudent) Masetr).submitResearch();
+                    ((MedicalStudent) Medical).getHospital();
+                    String hospital = ((MedicalStudent) Medical).getHospital();
+                    System.out.println("the hospital is " + hospital);
                     break;
                 }
                 case 12: {
-                    ((MedicalStudent) Medical).getHospital();
+                    ((MedicalStudent) Medical).submitResearch();
+                    String Mresearch = ((MedicalStudent) Medical).getMresearch();
+                    System.out.println("the research is " + Mresearch);
                     break;
                 }
                 case 13: {
-                    ((MedicalStudent) Medical).submitResearch();
-                    break;
-                }
-                case 14: {
                     ((EngineeringStudent) Engineering).submitReport();
+                    String report = ((EngineeringStudent) Engineering).getLabReport();
+                    System.out.println("the report is " + report);
                     break;
                 }
-                case 15 :
+                case 14 :
                     return;
                 default:
                     break;
             }
-            System.out.print("%n Enter your choice : ");
+            System.out.println("");
+            System.out.print("Enter your choice : ");
             choice = scanner.nextInt();
         }
     }

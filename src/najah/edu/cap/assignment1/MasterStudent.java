@@ -18,7 +18,7 @@ public class MasterStudent extends Student{
         return supervisor;
     }
 
-    public String supervisor;
+    public String supervisor = null  ;
     public MasterStudent(int id, String name, LocalDate DateOfBirth , int degree, String supervisor) {
         super(id, name, DateOfBirth);
         this.BAdegree = degree;
