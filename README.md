@@ -20,7 +20,8 @@ it is the student that having other property called BA degree, and can submit re
 # University class 
 (that contains many students , and can contain in this program many of universities )
 ## list of students 
-(the parent class of Master , Engineering , Medical, Normal Students Classes , having the shared properties and functions)
+(the parent class of Master , Engineering , Medical, Normal Students Classes , having the shared properties and functions
+such as : calculate age for each student , and we can compare 2 students .... )
 ### Master , Engineering , Medical, Normal Students 
 (each of them has its own class that inherit Student class , and having it its own properties and function , and maybe it is shared from class Students )
 
