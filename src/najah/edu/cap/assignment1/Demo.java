@@ -12,10 +12,10 @@ public class Demo {
 
         University najah = new University();
 
-        System.out.print("Enter date of birth in YYYY-MM-DD format: ");
+        //System.out.print("To add student must enter date of birth in YYYY-MM-DD format: ");
         Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
-        LocalDate dob = LocalDate.parse(date);
+        //String date = scanner.nextLine();
+        LocalDate dob = LocalDate.of(2003,01,19);
 
         Student Masetr = new MasterStudent(10, "Nama'" , dob ,3 ,"Amjad");
         Student Medical = new MedicalStudent(12,"Sama",dob,"Najah hospital");
@@ -24,9 +24,10 @@ public class Demo {
 
         System.out.print("Enter your choice : ");
         int choice = scanner.nextInt();
+        //= scanner.nextInt();
         int id;
         Student stu;
-        //public void enterChoice(int choice){
+        while (choice != 100){
             switch(choice){
                 case 1://add students
                 {
@@ -43,7 +44,8 @@ public class Demo {
                 case 3:{//retrieve student
                     System.out.print("Enter id for the student to delete him/her : ");
                     id = scanner.nextInt();
-                    najah.retreive(id);
+                    Student stud  = najah.retreive(id);
+                    stud.printInfo();
                     break;
                 }
                 case 4:{
@@ -87,41 +89,39 @@ public class Demo {
                 {
                     int degree = ((MasterStudent)Masetr).getBAdegree();
                     System.out.println("The degree is : " + degree);
-                    /**System.out.print("Enter id to get the BAdegree students: ");
-                    id = scanner.nextInt();
-                    if (najah.checkStudent(id)) {
-                        Student s = najah.retreive(id);
-                        if(s instanceof MasterStudent){{
-                            Student stu = (MasterStudent) s;
-                        //System.out.println("The BAdegree for this student is " + s.getBAdegree())
-                        }
-                    }else
-                        System.out.println("There is no student with this id .");**/
-
                     break;
                 }
                 case 9: {
                     ((MasterStudent) Masetr).submitResearch();
+                    break;
                 }
                 case 10: {
                     ((MasterStudent) Masetr).getSupervisor();
+                    break;
                 }
                 case 11: {
                     ((MasterStudent) Masetr).submitResearch();
+                    break;
                 }
                 case 12: {
                     ((MedicalStudent) Medical).getHospital();
+                    break;
                 }
                 case 13: {
                     ((MedicalStudent) Medical).submitResearch();
+                    break;
                 }
                 case 14: {
                     ((EngineeringStudent) Engineering).submitReport();
+                    break;
                 }
                 case 15 :
                     return;
                 default:
                     break;
             }
+            System.out.print("%n Enter your choice : ");
+            choice = scanner.nextInt();
+        }
     }
 }

@@ -34,7 +34,7 @@ public class MasterStudent extends Student{
     @Override
     protected void printInfo(){
         super.printInfo();
-        System.out.println(", degree is : " +BAdegree + "supervisor is : " + supervisor +", research is : "+labResearch);
+        System.out.println(", degree is : " + BAdegree + ", supervisor is : " + supervisor +", research is : "+labResearch);
     }
 
 }
