@@ -9,25 +9,18 @@ public class Demo {
 
         menu options =new menu();
         options.printMenu();
+
+        University najah = new University();
+
         System.out.print("Enter date of birth in YYYY-MM-DD format: ");
         Scanner scanner = new Scanner(System.in);
         String date = scanner.nextLine();
-        //scanner.close();
         LocalDate dob = LocalDate.parse(date);
 
+        Student Masetr = new MasterStudent(10, "Nama'" , dob ,3 ,"Amjad");
+        Student Medical = new MedicalStudent(12,"Sama",dob,"Najah hospital");
+        Student Engineering = new EngineeringStudent(15,"Ahmad",dob);
         Student st = new Student(19 , "Nama'",dob);
-
-        University najah = new University();
-        //najah.add(st);
-        //Student s =najah.retreive(110);
-        //s.printInfo();
-
-
-        //najah.remove(19);
-        //najah.retreive(19);
-
-        //Student Masetr = new MasterStudent(10, "Nama'" , dob ,3 ,"Amjad");
-        //najah.add((MasterStudent) Masetr);
 
         System.out.print("Enter your choice : ");
         int choice = scanner.nextInt();
@@ -92,49 +85,43 @@ public class Demo {
                 }
                 case 8:
                 {
-                    System.out.print("Enter id for the student to compare two students: ");
+                    int degree = ((MasterStudent)Masetr).getBAdegree();
+                    System.out.println("The degree is : " + degree);
+                    /**System.out.print("Enter id to get the BAdegree students: ");
                     id = scanner.nextInt();
                     if (najah.checkStudent(id)) {
-
+                        Student s = najah.retreive(id);
+                        if(s instanceof MasterStudent){{
+                            Student stu = (MasterStudent) s;
+                        //System.out.println("The BAdegree for this student is " + s.getBAdegree())
+                        }
                     }else
-                        System.out.println("There is no student with this id .");
+                        System.out.println("There is no student with this id .");**/
+
                     break;
                 }
-                case 14 :
+                case 9: {
+                    ((MasterStudent) Masetr).submitResearch();
+                }
+                case 10: {
+                    ((MasterStudent) Masetr).getSupervisor();
+                }
+                case 11: {
+                    ((MasterStudent) Masetr).submitResearch();
+                }
+                case 12: {
+                    ((MedicalStudent) Medical).getHospital();
+                }
+                case 13: {
+                    ((MedicalStudent) Medical).submitResearch();
+                }
+                case 14: {
+                    ((EngineeringStudent) Engineering).submitReport();
+                }
+                case 15 :
                     return;
                 default:
                     break;
-                }
-        //    }
-        //najah.createList();
-        //String NumberOfStudents = scanner.nextLine();
-        //createList(NumberOfStudents);
-
-        /**
-        Student st2 = new Student(190, "Nama'",dob);
-        st.equals(st2);
-        st.printInfo();
-        int age= st.getAge();
-        System.out.println("your age is : " + age);
-
-        Student Masetr = new MasterStudent(19, "Nama'" , dob ,3 ,"Amjad");
-        //System.out.print("Enter a string: ");
-        //Scanner scanner2= new Scanner(System.in); //System.in is a standard input stream
-        //String paper= scanner.nextLine();
-        //scanner2.close();//reads string
-        //System.out.print("You have entered: "+paper);
-        //String ff =((MasterStudent) Masetr).submitResearch(paper);
-        //String ff =((MasterStudent) Masetr).submitResearch();
-        //System.out.println(ff);
-        ((MasterStudent) Masetr).submitResearch();
-        System.out.println("your research is : " + ((MasterStudent) Masetr).getResearch());
-
-        st.equals(((MasterStudent) Masetr));
-
-        Student eng = new EngineeringStudent(19,"farha",dob);
-        ((EngineeringStudent) eng).submitReport();
-        System.out.println("your research is : " + ((EngineeringStudent)eng).getLabReport());
-
-        ((EngineeringStudent) eng).printInfo();**/
+            }
     }
 }
