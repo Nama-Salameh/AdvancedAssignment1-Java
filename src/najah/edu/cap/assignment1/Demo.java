@@ -42,7 +42,7 @@ public class Demo {
                     break;
                 }
                 case 3:{//retrieve student
-                    System.out.print("Enter id for the student to delete him/her : ");
+                    System.out.print("Enter id for the student to retrieve him/her : ");
                     id = scanner.nextInt();
                     najah.retreive(id);
                     break;
@@ -101,15 +101,9 @@ public class Demo {
                 case 10: {
                     //((MasterStudent) Masetr).getSupervisor();
                     String supervisor = ((MasterStudent) Masetr).getSupervisor();
-                    System.out.println("the research is " + supervisor);
+                    System.out.println("the supervisor is " + supervisor);
                     break;
                 }
-               /** case 11: {
-                    //((MasterStudent) Masetr).submitResearch();
-                    String Masresearch = ((MasterStudent) Masetr).getResearch();
-                    System.out.println("the research is " + Masresearch);
-                    break;
-                }**/
                 case 11: {
                     ((MedicalStudent) Medical).getHospital();
                     String hospital = ((MedicalStudent) Medical).getHospital();
